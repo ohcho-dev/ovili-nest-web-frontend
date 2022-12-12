@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Footer from "../components/Footers";
+import Header from "../components/Headers";
 
 const SubLayoutWrap = styled.div`
   width: 100%;

@@ -166,8 +166,7 @@ table {
 
 .select .selected .arrow {
   width: 24px;
-  background: url("https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/arrow-bottom.png")
-    no-repeat 70% 50%;
+  background: url("/public/images/icon-arrow.svg") no-repeat 70% 50%;
   background-size: 50% 50%;
 }
 
@@ -201,4 +200,18 @@ table {
 
 .select .optionWrap .option:hover {
   background: rgba(168, 156, 235, 0.35);
+}
+
+.slideAnimation {
+  right: 0px;
+  animation: slideAnimation 0.2s alternate;
+}
+
+@keyframes slideAnimation {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 0;
+  }
 }

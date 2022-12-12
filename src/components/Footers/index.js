@@ -8,11 +8,23 @@ const Container = styled.div`
   max-width: 1280px;
   padding: 16px 40px;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    height: 205px;
+    padding: 38px 20px;
+  }
 `;
 const Address = styled.address`
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    text-align: center;
+  }
 `;
-const AddressItem = styled.span`
+const AddressItem = styled.div`
   font-family: "Rubik";
   font-weight: 400;
   font-size: 16px;
@@ -22,12 +34,27 @@ const AddressItem = styled.span`
   &:nth-child(2n) {
     margin: 0 8px;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    letter-spacing: -0.05em;
+
+    &:nth-child(2n) {
+      display: none;
+    }
+  }
 `;
 const LinkWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px 0 32px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    text-align: center;
+    padding: 16px 0;
+  }
 `;
 const LinkItem = styled.div`
   font-family: "Rubik";
@@ -45,6 +72,19 @@ const LinkItem = styled.div`
     margin: 0 8px;
     text-decoration: none;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    line-height: 130%;
+
+    &:first-child {
+      margin-bottom: 4px;
+    }
+
+    &:nth-child(2n) {
+      display: none;
+    }
+  }
 `;
 const Copyright = styled.div`
   font-family: "Rubik";
@@ -55,6 +95,7 @@ const Copyright = styled.div`
   color: #777777;
   text-align: center;
 `;
+
 const Footer = () => {
   return (
     <footer>
