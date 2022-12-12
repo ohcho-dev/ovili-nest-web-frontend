@@ -1,11 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const HeaderWrap = styled.header`
   background: #000;
 `;
-
 const Container = styled.div`
   width: 100%;
   max-width: 1280px;
@@ -16,7 +15,6 @@ const Container = styled.div`
   justify-content: space-between;
   height: 90px;
 `;
-
 const NavWrap = styled.div`
   display: flex;
   align-items: center;
@@ -43,7 +41,6 @@ const NavItem = styled.li`
     cursor: normal;
   }
 `;
-const LinkWrap = styled.div``;
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -55,13 +52,13 @@ const Header = () => {
         <NavWrap>
           <img src="/images/logo.svg" alt="ovili nest" />
           <Nav>
-            <NavItem>WORLD</NavItem>
-            <NavItem>JOURNEY MAY</NavItem>
-            <NavItem>UTILITY</NavItem>
-            <NavItem>NEST</NavItem>
+            <NavItem onClick={() => navigate("/world")}>WORLD</NavItem>
+            <NavItem onClick={() => navigate("/journey")}>JOURNEY MAY</NavItem>
+            <NavItem onClick={() => navigate("/utility")}>UTILITY</NavItem>
+            <NavItem onClick={() => navigate("/nest")}>NEST</NavItem>
             <NavItem>|</NavItem>
-            <NavItem>GUIDE</NavItem>
-            <NavItem>FAQ</NavItem>
+            <NavItem onClick={() => navigate("/guide")}>GUIDE</NavItem>
+            <NavItem onClick={() => navigate("/faq")}>FAQ</NavItem>
           </Nav>
         </NavWrap>
         <div className="select">
