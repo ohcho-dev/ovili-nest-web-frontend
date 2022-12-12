@@ -11,6 +11,8 @@ const MainLayoutWrap = styled.div`
 
 const Content = styled.main`
   height: calc(100vh - 90px - 131px);
+  background: linear-gradient(107.68deg, #404040 0%, #000000 99.45%);
+  position: relative;
 
   @media screen and (max-width: 768px) {
     height: calc(100vh - 56px - 205px);
