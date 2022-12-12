@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
 `;
 const VideoFontWrap = styled.div``;
 const VideoFont = styled.img`
@@ -46,15 +47,6 @@ const VideoWhiteFontWrap = styled.div`
   left: 0;
   z-index: 1000;
 `;
-const VideoWhiteFont = styled.div`
-  height: 20rem;
-  margin-right: 25px;
-
-  &:last-child {
-    height: 120px;
-    margin-right: 0;
-  }
-`;
 const Main = () => {
   const [video, setVideo] = useState("");
 
@@ -64,9 +56,6 @@ const Main = () => {
   const handleMouseLeave = (e, url) => {
     setVideo(url);
   };
-  useEffect(() => {
-    console.log(video);
-  }, [video]);
 
   return (
     <MainLayout>
@@ -128,9 +117,10 @@ const Main = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
-                  top: "37%",
-                  left: "40px",
-                  transform: "translate(0, -50%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  transform: "translate(-600px, -117%)",
                 }}
               />
             )}
@@ -142,9 +132,10 @@ const Main = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
-                  top: "37%",
-                  left: "188px",
-                  transform: "translate(0, -50%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  transform: "translate(-452px, -117%)",
                 }}
               />
             )}
@@ -158,9 +149,10 @@ const Main = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
-                  top: "37%",
-                  left: "341px",
-                  transform: "translate(0, -50%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  transform: "translate(-299px, -117%)",
                 }}
               />
             )}
@@ -172,9 +164,10 @@ const Main = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
-                  top: "37%",
-                  left: "395px",
-                  transform: "translate(0, -50%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  transform: "translate(-245px, -117%)",
                 }}
               />
             )}
@@ -188,9 +181,10 @@ const Main = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
-                  top: "37%",
-                  left: "515px",
-                  transform: "translate(0, -50%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  transform: "translate(-126px, -117%)",
                 }}
               />
             )}
@@ -204,9 +198,10 @@ const Main = () => {
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
-                  top: "40.9%",
-                  left: "593px",
-                  transform: "translate(0, -50%)",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  transform: "translate(-46px, -130%)",
                   height: "120px",
                   marginRight: "0",
                 }}
