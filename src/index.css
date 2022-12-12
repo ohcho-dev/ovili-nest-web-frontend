@@ -114,7 +114,8 @@ body {
   line-height: 1;
 }
 ol,
-ul {
+ul,
+nav {
   list-style: none;
 }
 blockquote,
@@ -131,4 +132,72 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* Custom Select:div */
+.select {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  left: calc(50% - 120px / 2 + 540px);
+  top: calc(50% - 40px / 2);
+  background: #4e4e4e;
+  cursor: pointer;
+}
+
+.select .selected {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.label {
+  font-family: "Lexend";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.select .selected .arrow {
+  width: 24px;
+  background: url("https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/arrow-bottom.png")
+    no-repeat 70% 50%;
+  background-size: 50% 50%;
+}
+
+.select .optionWrap {
+  width: 120px;
+  position: absolute;
+  background: #4e4e4e;
+  cursor: pointer;
+  padding: 16px 0;
+  margin-top: -1px;
+}
+
+.select .optionWrap .option {
+  padding: 8px;
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.select .optionWrap .option,
+.select .selected .label {
+  white-space: nowrap; /* 줄바꿈 안함 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 말줄임 적용 */
+}
+
+.select .optionWrap .option:hover {
+  background: rgba(168, 156, 235, 0.35);
 }
