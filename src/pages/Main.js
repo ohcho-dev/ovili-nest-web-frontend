@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import MainLayout from "../layouts/MainLayout";
-import ReactPlayer from "react-player";
 
 const Container = styled.div`
   width: 100%;
@@ -14,14 +13,53 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 const VideoFontWrap = styled.div``;
-const VideoFont = styled.img`
+const VideoFont = styled.div`
+  display: inline-block;
+  width: 20rem;
   height: 20rem;
+  margin-right: 25px;
+  cursor: pointer;
+  -webkit-mask: url("${(props) => props.src}");
+  mask: url("${(props) => props.src}");
+
+  &:nth-child(6) {
+    height: 120px;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 8.8rem;
+    margin-right: 1rem;
+
+    &:nth-child(5) {
+      margin-right: 0;
+    }
+
+    &:nth-child(6) {
+      height: 5.3rem;
+    }
+  }
+`;
+const VideoFontSvg = styled.img`
   margin-right: 25px;
   cursor: pointer;
 
   &:nth-child(6) {
     height: 120px;
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 8.8rem;
+    margin-right: 1rem;
+
+    &:nth-child(5) {
+      margin-right: 0;
+    }
+
+    &:nth-child(6) {
+      height: 5.3rem;
+    }
   }
 `;
 const Title = styled.h2`
@@ -56,7 +94,9 @@ const Main = () => {
   const handleMouseLeave = (e, url) => {
     setVideo(url);
   };
-
+  useEffect(() => {
+    console.log(video);
+  }, []);
   return (
     <MainLayout>
       <Container>
@@ -66,37 +106,139 @@ const Main = () => {
             alt="o"
             onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-o.mp4")}
             onMouseLeave={(e) => handleMouseLeave(e, "")}
-          />
+            style={{ width: "184px" }}
+          >
+            <div
+              className="fadeAnimation"
+              style={{ position: "fixed", top: 0, left: 0 }}
+            >
+              <video
+                height="100%"
+                autoPlay
+                loop
+                playing={true}
+                muted={true}
+                src={"/videos/video-o.mp4"}
+              >
+                Browser not supported
+              </video>
+            </div>
+          </VideoFont>
           <VideoFont
             src="/images/font-v.svg"
             alt="o"
             onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-v.mp4")}
             onMouseLeave={(e) => handleMouseLeave(e, "")}
-          />
+            style={{ width: "186px", height: "197px" }}
+          >
+            <div
+              className="fadeAnimation"
+              style={{ position: "fixed", top: 0, left: 0 }}
+            >
+              <video
+                height="100%"
+                autoPlay
+                loop
+                playing={true}
+                muted={true}
+                src={"/videos/video-v.mp4"}
+              >
+                Browser not supported
+              </video>
+            </div>
+          </VideoFont>
           <VideoFont
             src="/images/font-i-1.svg"
             alt="i"
             onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-i-1.mp4")}
             onMouseLeave={(e) => handleMouseLeave(e, "")}
-          />
+            style={{ width: "82px", height: "201px" }}
+          >
+            <div
+              className="fadeAnimation"
+              style={{ position: "fixed", top: 0, left: 0 }}
+            >
+              <video
+                height="100%"
+                autoPlay
+                loop
+                playing={true}
+                muted={true}
+                src={"/videos/video-i-1.mp4"}
+              >
+                Browser not supported
+              </video>
+            </div>
+          </VideoFont>
           <VideoFont
             src="/images/font-l.svg"
             alt="l"
             onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-l.mp4")}
             onMouseLeave={(e) => handleMouseLeave(e, "")}
-          />
+            style={{ width: "151px", height: "195px" }}
+          >
+            <div
+              className="fadeAnimation"
+              style={{ position: "fixed", top: 0, left: 0 }}
+            >
+              <video
+                height="100%"
+                autoPlay
+                loop
+                playing={true}
+                muted={true}
+                src={"/videos/video-l.mp4"}
+              >
+                Browser not supported
+              </video>
+            </div>
+          </VideoFont>
           <VideoFont
             src="/images/font-i-2.svg"
             alt="i"
             onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-i-2.mp4")}
             onMouseLeave={(e) => handleMouseLeave(e, "")}
-          />
+            style={{ width: "82px", height: "201px" }}
+          >
+            <div
+              className="fadeAnimation"
+              style={{ position: "fixed", top: 0, left: 0 }}
+            >
+              <video
+                height="100%"
+                autoPlay
+                loop
+                playing={true}
+                muted={true}
+                src={"/videos/video-i-2.mp4"}
+              >
+                Browser not supported
+              </video>
+            </div>
+          </VideoFont>
           <VideoFont
             src="/images/font-nest.svg"
             alt="nest"
             onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-nest.mp4")}
             onMouseLeave={(e) => handleMouseLeave(e, "")}
-          />
+            style={{ width: "376px", height: "120px" }}
+          >
+            <div
+              className="fadeAnimation"
+              style={{ position: "fixed", top: 0, left: 0 }}
+            >
+              <video
+                height="100%"
+                autoPlay
+                loop
+                playing={true}
+                muted={true}
+                src={"/videos/video-nest.mp4"}
+              >
+                Browser not supported
+              </video>
+            </div>
+          </VideoFont>
         </VideoFontWrap>
         <Title>“Hi, Villionz! Welcome to Ovili nest”</Title>
         <Desc>
@@ -110,7 +252,7 @@ const Main = () => {
         {video && (
           <VideoWhiteFontWrap>
             {video === "/videos/video-o.mp4" && (
-              <VideoFont
+              <VideoFontSvg
                 src="/images/font-o-white.svg"
                 alt="o"
                 onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-o.mp4")}
@@ -125,7 +267,7 @@ const Main = () => {
               />
             )}
             {video === "/videos/video-v.mp4" && (
-              <VideoFont
+              <VideoFontSvg
                 src="/images/font-v-white.svg"
                 alt="o"
                 onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-v.mp4")}
@@ -140,7 +282,7 @@ const Main = () => {
               />
             )}
             {video === "/videos/video-i-1.mp4" && (
-              <VideoFont
+              <VideoFontSvg
                 src="/images/font-i-1-white.svg"
                 alt="o"
                 onMouseEnter={(e) =>
@@ -152,12 +294,12 @@ const Main = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  transform: "translate(-299px, -117%)",
+                  transform: "translate(-307px, -117%)",
                 }}
               />
             )}
             {video === "/videos/video-l.mp4" && (
-              <VideoFont
+              <VideoFontSvg
                 src="/images/font-l-white.svg"
                 alt="o"
                 onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-l.mp4")}
@@ -167,12 +309,12 @@ const Main = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  transform: "translate(-245px, -117%)",
+                  transform: "translate(-248px, -117%)",
                 }}
               />
             )}
             {video === "/videos/video-i-2.mp4" && (
-              <VideoFont
+              <VideoFontSvg
                 src="/images/font-i-2-white.svg"
                 alt="o"
                 onMouseEnter={(e) =>
@@ -184,12 +326,12 @@ const Main = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  transform: "translate(-126px, -117%)",
+                  transform: "translate(-136px, -117%)",
                 }}
               />
             )}
             {video === "/videos/video-nest.mp4" && (
-              <VideoFont
+              <VideoFontSvg
                 src="/images/font-nest-white.svg"
                 alt="o"
                 onMouseEnter={(e) =>
@@ -201,7 +343,7 @@ const Main = () => {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  transform: "translate(-46px, -130%)",
+                  transform: "translate(-55px, -130%)",
                   height: "120px",
                   marginRight: "0",
                 }}
