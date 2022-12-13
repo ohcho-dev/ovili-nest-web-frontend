@@ -227,6 +227,11 @@ table {
   animation: fadeAnimation 0.8s linear alternate;
 }
 
+.fadeAnimation2 {
+  opacity: 1;
+  animation: fadeAnimation 1.5s linear alternate;
+}
+
 @keyframes fadeAnimation {
   0% {
     opacity: 0;

@@ -257,6 +257,7 @@ const Main = () => {
                 alt="o"
                 onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-o.mp4")}
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
+                className="fadeAnimation2"
                 style={{
                   position: "fixed",
                   top: "50%",
@@ -272,6 +273,7 @@ const Main = () => {
                 alt="o"
                 onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-v.mp4")}
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
+                className="fadeAnimation2"
                 style={{
                   position: "fixed",
                   top: "50%",
@@ -288,6 +290,7 @@ const Main = () => {
                 onMouseEnter={(e) =>
                   handleMouseEnter(e, "/videos/video-i-1.mp4")
                 }
+                className="fadeAnimation2"
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
@@ -304,6 +307,7 @@ const Main = () => {
                 alt="o"
                 onMouseEnter={(e) => handleMouseEnter(e, "/videos/video-l.mp4")}
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
+                className="fadeAnimation2"
                 style={{
                   position: "fixed",
                   top: "50%",
@@ -320,6 +324,7 @@ const Main = () => {
                 onMouseEnter={(e) =>
                   handleMouseEnter(e, "/videos/video-i-2.mp4")
                 }
+                className="fadeAnimation2"
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
@@ -337,6 +342,7 @@ const Main = () => {
                 onMouseEnter={(e) =>
                   handleMouseEnter(e, "/videos/video-nest.mp4")
                 }
+                className="fadeAnimation2"
                 onMouseLeave={(e) => handleMouseLeave(e, "")}
                 style={{
                   position: "fixed",
