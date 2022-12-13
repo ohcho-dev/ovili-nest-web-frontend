@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import CustomSelect from "./CustomSelect";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import MenuItem from "./MenuItem";
 
 const FadeAnimation = keyframes`
@@ -19,6 +19,7 @@ const HambergMenuWrap = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
+  z-index: 100;
 `;
 const Dimmed = styled.div`
   width: 100%;
@@ -99,50 +100,57 @@ const Option = styled.li`
 
 const HambergMenu = ({ handleMenuToggle }) => {
   const navigate = useNavigate();
+  const windowSize = useWindowSize();
   const [linkToggle, setLinkToggle] = useState(false);
 
   return (
-    <HambergMenuWrap>
-      <Dimmed onClick={handleMenuToggle} />
-      <Modal className="slideAnimation">
-        <CloseWrap>
-          <CloseIcon
-            src="/images/icon-close.svg"
-            alt="닫기"
-            onClick={handleMenuToggle}
-          />
-        </CloseWrap>
-
-        <MobileNavLists>
-          <MobileNav onClick={() => navigate("/world")}>WORLD</MobileNav>
-          <MobileNav onClick={() => navigate("/journey")}>
-            JOURNEY MAY
-          </MobileNav>
-          <MobileNav onClick={() => navigate("/utility")}>UTILITY</MobileNav>
-          <MobileNav onClick={() => navigate("/nest")}>NEST</MobileNav>
-          <MobileNav onClick={() => navigate("/guide")}>GUIDE</MobileNav>
-          <MobileNav onClick={() => navigate("/faq")}>FAQ</MobileNav>
-
-          <SelectWrap>
-            <Selected onClick={() => setLinkToggle(!linkToggle)}>
-              <Label>Link</Label>
-              <ErrorIcon
-                src="/images/icon-arrow.svg"
-                alt="arrow"
-                rotate={linkToggle ? "0deg" : "180deg"}
+    <>
+      {windowSize.width <= 768 && (
+        <HambergMenuWrap>
+          <Dimmed onClick={handleMenuToggle} />
+          <Modal className="slideAnimation">
+            <CloseWrap>
+              <CloseIcon
+                src="/images/icon-close.svg"
+                alt="닫기"
+                onClick={handleMenuToggle}
               />
-            </Selected>
-            {linkToggle && (
-              <OptionWrap>
-                <Option onClick={() => navigate("#")}>YongPyong</Option>
-                <Option onClick={() => navigate("#")}>Youtube</Option>
-              </OptionWrap>
-            )}
-          </SelectWrap>
-        </MobileNavLists>
-        <MenuItem />
-      </Modal>
-    </HambergMenuWrap>
+            </CloseWrap>
+
+            <MobileNavLists>
+              <MobileNav onClick={() => navigate("/world")}>WORLD</MobileNav>
+              <MobileNav onClick={() => navigate("/journey")}>
+                JOURNEY MAY
+              </MobileNav>
+              <MobileNav onClick={() => navigate("/utility")}>
+                UTILITY
+              </MobileNav>
+              <MobileNav onClick={() => navigate("/nest")}>NEST</MobileNav>
+              <MobileNav onClick={() => navigate("/guide")}>GUIDE</MobileNav>
+              <MobileNav onClick={() => navigate("/faq")}>FAQ</MobileNav>
+
+              <SelectWrap>
+                <Selected onClick={() => setLinkToggle(!linkToggle)}>
+                  <Label>Link</Label>
+                  <ErrorIcon
+                    src="/images/icon-arrow.svg"
+                    alt="arrow"
+                    rotate={linkToggle ? "0deg" : "180deg"}
+                  />
+                </Selected>
+                {linkToggle && (
+                  <OptionWrap>
+                    <Option onClick={() => navigate("#")}>YongPyong</Option>
+                    <Option onClick={() => navigate("#")}>Youtube</Option>
+                  </OptionWrap>
+                )}
+              </SelectWrap>
+            </MobileNavLists>
+            <MenuItem />
+          </Modal>
+        </HambergMenuWrap>
+      )}
+    </>
   );
 };
 
