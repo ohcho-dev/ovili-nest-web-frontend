@@ -5,10 +5,11 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 100%;
   height: 131px;
-  max-width: 1280px;
+  // max-width: 1280px;
   padding: 16px 40px;
   margin: 0 auto;
   background: #000;
+  z-index: 100;
 
   @media screen and (max-width: 768px) {
     height: 205px;
@@ -31,6 +32,7 @@ const AddressItem = styled.div`
   font-size: 16px;
   line-height: 130%;
   color: #ffffff;
+  
 
   &:nth-child(2n) {
     margin: 0 8px;
