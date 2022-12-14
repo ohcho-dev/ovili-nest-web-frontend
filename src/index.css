@@ -240,4 +240,5 @@ table {
     opacity: 1;
   }
 }
-footer {z-index: 10000;position: relative;}
+header {z-index: 10000; position: relative;}
+footer {z-index: 10000; position: relative;}
